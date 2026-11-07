@@ -48,6 +48,18 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        matt_mod_tap: matt_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MATT_MOD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            require-prior-idle-ms = <125>;
+            quick-tap-ms = <175>;
+        };
     };
 
     macros {
@@ -183,10 +195,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp F        &kp P             &kp B        &kp J        &kp L              &kp U         &kp Y            &kp SEMICOLON    &trans
-&trans  &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M        &mt RIGHT_SHIFT N  &mt RCTRL E   &mt RIGHT_ALT I  &mt RIGHT_GUI O  &trans
-&trans  &kp Z       &kp X       &kp C        &kp D             &kp V        &kp K        &kp H              &kp COMMA     &kp DOT          &kp FSLH         &trans
-                                &lt 4 ESC    &lt 1 SPACE       &lt 2 TAB    &lt 5 ENTER  &lt 5 BACKSPACE    &lt 6 DELETE
+&trans  &kp Q                 &kp W                 &kp F                  &kp P                       &kp B        &kp J        &kp L                        &kp U                  &kp Y                      &kp SEMICOLON              &trans
+&trans  &matt_mod_tap LGUI A  &matt_mod_tap LALT R  &matt_mod_tap LCTRL S  &matt_mod_tap LEFT_SHIFT T  &kp G        &kp M        &matt_mod_tap RIGHT_SHIFT N  &matt_mod_tap RCTRL E  &matt_mod_tap RIGHT_ALT I  &matt_mod_tap RIGHT_GUI O  &trans
+&trans  &kp Z                 &kp X                 &kp C                  &kp D                       &kp V        &kp K        &kp H                        &kp COMMA              &kp DOT                    &kp FSLH                   &trans
+                                                    &lt 4 ESC              &lt 1 SPACE                 &lt 2 TAB    &lt 5 ENTER  &lt 5 BACKSPACE              &lt 6 DELETE
             >;
         };
 
