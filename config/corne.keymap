@@ -84,11 +84,6 @@
             key-positions = <13 29>;
         };
 
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <15 21>;
-        };
-
         perc {
             bindings = <&kp PERCENT>;
             key-positions = <5 17>;
@@ -164,12 +159,6 @@
         rightbrack {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <33 32>;
-            layers = <0>;
-        };
-
-        para-less {
-            bindings = <&paraless>;
-            key-positions = <20 19>;
             layers = <0>;
         };
 
